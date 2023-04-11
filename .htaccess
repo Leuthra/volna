@@ -1,6 +1,8 @@
+<IfModule mod_rewrite.c>
 RewriteEngine on
-RewriteCond %{THE_REQUEST}/([^.]+)\.html [NC]
-RewriteRule ^ /%1 [NC,L,R]
-
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^ {REQUEST_URI}.html [NC,L]
+RewriteRule ^(.*)$ $1.html
+</IfModule>
+
+this flag{r4m1d3v_1s_TH3_K1n9}
